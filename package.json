@@ -1,0 +1,34 @@
+{
+  "name": "nodejs-archtecture-partterns",
+  "version": "1.0.0",
+  "description": "project developed in the process of my learning to build different software architectures in a basic nodejs backend application with express.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "dev": "node --watch src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HDS2904/nodejs-archtecture-partterns.git"
+  },
+  "keywords": [
+    "MVC",
+    "architecture",
+    "EsLint",
+    "Hexagonal",
+    "architecture",
+    "reestructuracion",
+    "nodejs",
+    "express."
+  ],
+  "author": "HDS2904",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/HDS2904/nodejs-archtecture-partterns/issues"
+  },
+  "homepage": "https://github.com/HDS2904/nodejs-archtecture-partterns#readme",
+  "dependencies": {
+    "express": "^4.21.1",
+    "mongoose": "^8.7.0"
+  }
+}
