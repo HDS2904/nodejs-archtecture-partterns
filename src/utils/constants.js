@@ -10,7 +10,19 @@ const STATUS_AVALIBLE = {
   }
 };
 
+/** @enum {string} */
+const USER_ROLE = {
+  user: 'USER',
+  admin: 'ADMIN',
+  moderator: 'MODERATOR',
+
+  /** @return { Array<string> }  */
+  listToString() {
+    return [ this.user, this.admin, this.moderator ]
+  }
+};
 
 module.exports = {
-  STATUS_AVALIBLE
+  STATUS_AVALIBLE,
+  USER_ROLE
 }

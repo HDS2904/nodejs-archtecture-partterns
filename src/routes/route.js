@@ -1,20 +1,12 @@
 const express = require('express');
-const route = express.Router();
+const userRoutes = require('./user.route');
+const groupRoutes = require('./group.route');
+const tagRoutes = require('./tag.route');
 
-const { getAllStudent, createStudent, getByIdStudent, updateStudent, deleteStudent } = require('../controller/studentController');
-const { getAllUniversity, createUniversity, getByIdUniversity, updateUniversity, deleteUniversity } = require('../controller/universityController');
+const router = express.Router();
 
-route.post('/', createStudent);
-route.get('/', getAllStudent);
-route.get('/:id', getByIdStudent);
-route.put('/:id', updateStudent);
-route.delete('/:id', deleteStudent);
+router.use('/user', userRoutes);
+router.use('/group', groupRoutes);
+router.use('/tag', tagRoutes);
 
-// route.post('/', createUniverisity);
-// route.get('/', getAllUniverisity);
-// route.get('/:id', getByIdUniverisity);
-// route.put('/:id', updateUniverisity);
-// route.delete('/:id', deleteUniverisity);
-
-
-module.exports = route;
+module.exports = router;

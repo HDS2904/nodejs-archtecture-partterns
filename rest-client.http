@@ -1,28 +1,119 @@
-GET http://localhost:4000/student
+### Environment Variables
+@devBaseUrl = http://localhost:4000
+@prodBaseUrl = https://api.tuservicio.com
+
+### Select environment
+@baseUrl = {{devBaseUrl}}
+
+## ********************** TAG ***************************
+### Show all TAGS
+GET {{baseUrl}}/tag
 content-type: application/json
 
-GET http://localhost:4000/student/66d5593efc838718a0c81099
+### Show TAG
+GET {{baseUrl}}/tag/6724e3f42235ec15fcb98b1f
 content-type: application/json
 
-POST http://localhost:4000/student
+### Create TAG
+POST {{baseUrl}}/tag
 content-type: application/json
 
 {
-  "code": "student17200143",
-  "name": "jonathan canales chavez",
-  "age": 18,
-  "special": false
+  "name": "Razonamiento",
+  "description": "Habilidades lógicas de decición.",
+  "color": "Orange"
 }
 
-PUT http://localhost:4000/student/66e75fbf2ffd6ad972e750fa
+### Update TAG
+PUT {{baseUrl}}/tag/6724f8804666ba07b961b52b
 content-type: application/json
 
 {
-  "code": "student17200143",
-  "name": "jonathan canales chavez",
+  "name": "Razonamiento",
+  "description": "Habilidades lógicas de decición.",
+  "color": "Orange"
+}
+
+### Delete TAG
+DELETE  {{baseUrl}}/tag/6725073fc1e0bc1e1302d844
+content-type: application/json
+
+
+## ********************** GROUP ***************************
+### Show all GROUPS
+GET {{baseUrl}}/group
+content-type: application/json
+
+### Show GROUP
+GET {{baseUrl}}/group/672d92d1f1b6d7062fc1e8b0
+content-type: application/json
+
+### Create GROUP
+POST {{baseUrl}}/group
+content-type: application/json
+
+{
+  "code": "group234",
+  "name": "Entretenimiento",
+  "description": "Grupo ocio para hacer actividades aleatorias.",
+  "maxMembers": 50,
+  "tags": ["672d8db6d7f383eb3c2f35e5"]
+}
+
+### Update Group
+PUT {{baseUrl}}/group/672d92d1f1b6d7062fc1e8b0
+content-type: application/json
+
+{
+  "code": "group123",
+  "name": "University",
+  "description": "Grupo de educación superior",
+  "maxMembers": 30,
+  "tags": ["672d8ceb745a42741dd09e09","672fe6059e4cc5ac31ae9171"]
+}
+
+### Delete Group
+DELETE  {{baseUrl}}/group/672d92d1f1b6d7062fc1e8b0
+content-type: application/json
+
+
+## ********************** USER ***************************
+### Show all USERS
+GET {{baseUrl}}/user
+content-type: application/json
+
+### Show USER
+GET {{baseUrl}}/user/672fe744e06ac529b0e6b1b8
+content-type: application/json
+
+### Create USER
+POST {{baseUrl}}/user
+content-type: application/json
+
+{
+  "username": "azuna",
+  "email": "lucy.azn@gmail.com",
+  "password": "azn123",
+  "name": "lucy E.",
+  "lastName": "Rengifo La Cruz",
+  "age": 25
+}
+
+### Update USER
+PUT {{baseUrl}}/user/672fe744e06ac529b0e6b1b8
+content-type: application/json
+
+{
+  "username": "holdigoas",
+  "email": "jonathan.hds@gmail.com",
+  "password": "hds123",
+  "name": "jonathan E.",
+  "lastName": "Canales Chavez",
   "age": 32,
-  "special": true
+  "role": "ADMIN",
+  "group": "672fe68ce06ac529b0e6b1b5"
 }
 
-DELETE  http://localhost:4000/student/66e75fbf2ffd6ad972e750fa
+### Delete USER
+DELETE  {{baseUrl}}/user/672fd8db5c57be496b7d8b02
 content-type: application/json

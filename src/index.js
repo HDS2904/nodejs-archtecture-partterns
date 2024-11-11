@@ -11,8 +11,7 @@ app.use(originControl);
 
 // controllers
 const routes = require('./routes/route');
-
-app.use('/student', routes);
+app.use('/', routes);
 
 app.listen(PORT_PROJECT, () => console.log("Aplication running."));
 
